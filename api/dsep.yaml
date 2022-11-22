@@ -2229,14 +2229,9 @@ components:
         cred:
           type: string
         skills:
-          type: array
-          items:
-            type: object
-            properties:
-              code:
-                type: string
-              name:
-                type: string
+          $ref: '#/components/schemas/Skills'
+        rating:
+          $ref: '#/components/schemas/Rating/properties/value'
         tags:
           $ref: '#/components/schemas/Tags'
     Policy:
@@ -2568,3 +2563,14 @@ components:
           type: string
         registration:
           type: string
+
+    Skills:
+      description: Describes the skills of a person.
+      type: array
+        items:
+          type: object
+          properties:
+            code:
+              type: string
+            name:
+              type: string
